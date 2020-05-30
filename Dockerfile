@@ -4,4 +4,4 @@ COPY . ./webrx
 WORKDIR /webrx
 RUN npm install
 EXPOSE 4200
-RUN ng serve
+RUN npm start
