@@ -5,4 +5,4 @@ WORKDIR /webrx
 RUN npm install
 EXPOSE 4200
 ENTRYPOINT ["npm"]
-CMD ["start"]
+CMD ["start --host 0.0.0.0"]
