@@ -1,4 +1,7 @@
 FROM node:11.6.0-alpine AS builder
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -y git
 COPY . ./test-application
 WORKDIR /test-application
 RUN npm i
