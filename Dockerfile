@@ -1,10 +1,8 @@
-### STAGE 1: Build ###
-FROM node:12.7-alpine AS build
-WORKDIR /usr/src/app
-COPY package.json ./
-RUN npm install
-COPY . .
-RUN npm run build
-### STAGE 2: Run ###
-FROM nginx:1.17.1-alpine
-COPY --from=build /usr/src/app/dist/webrx /usr/share/nginx/html
+FROM node:11.6.0-alpine AS builder
+COPY . ./test-application
+WORKDIR /test-application
+RUN npm i
+RUN $(npm bin)/ng build --prod
+
+FROM nginx:1.15.8-alpine
+COPY --from=builder /test-application/dist/test-application/ /usr/share/nginx/html
