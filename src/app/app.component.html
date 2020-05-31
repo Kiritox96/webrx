@@ -1,4 +1,7 @@
 
 <a-scene>
-  <a-entity scale="2 2 2" gltf-model="url(https://cdn.rawgit.com/KhronosGroup/glTF-Sample-Models/9176d098/1.0/Duck/glTF/Duck.gltf)" position="0 0.5 1"></a-entity>
+  <a-assets>
+    <a-asset-item id="skull-model" src="https://cdn.rawgit.com/KhronosGroup/glTF-Sample-Models/9176d098/1.0/Duck/glTF/Duck.gltf" crossOrigin="anonymous"></a-asset-item> 
+  </a-assets>
+  <a-gltf-model  scale="2 2 2" src="#skull-model" position="0 2 2"></a-gltf-model>
 </a-scene>
