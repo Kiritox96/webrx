@@ -1,11 +1,4 @@
 
 <a-scene>
-  <a-camera rotation="0 0 0" wsad-controls look-controls>
-  </a-camera>
-  <a-assets>
-    <a-asset-item id="skull-model" src="https://dl.dropboxusercontent.com/s/dvahjq5trg9pysj/evil-skull.gltf" crossOrigin="anonymous"></a-asset-item> 
-  </a-assets>
-  <a-gltf-model src="#skull-model" position="0 2 -3"></a-gltf-model>
-  <a-entity id="ground" geometry="primitive: box; width: 20; height: 0.01; depth: 20" material="color: #eee;" position="0 0 -4"></a-entity>
-  <a-entity light="type: directional; color: #FFF; intensity: 0.6" position="-0.5 1 1"></a-entity>
+  <a-entity gltf-model="url(https://cdn.rawgit.com/KhronosGroup/glTF-Sample-Models/9176d098/1.0/Duck/glTF/Duck.gltf)" position="0 0 -5"></a-entity>
 </a-scene>
