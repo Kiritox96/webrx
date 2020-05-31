@@ -1,7 +1,13 @@
 
-<a-scene>
+<a-scene embedded arjs='sourceType: webcam;'>
+  <a-marker preset='hiro'>
+
+    <a-entity scale="0.2 0.2 0.2" gltf-model="url(https://cdn.rawgit.com/KhronosGroup/glTF-Sample-Models/9176d098/1.0/Duck/glTF/Duck.gltf)"></a-entity>
+
+  </a-marker>
+
+  <a-entity camera></a-entity>
   <a-assets>
     <a-asset-item id="skull-model" src="https://cdn.rawgit.com/KhronosGroup/glTF-Sample-Models/9176d098/1.0/Duck/glTF/Duck.gltf" crossOrigin="anonymous"></a-asset-item> 
   </a-assets>
-  <a-gltf-model  scale="2 2 2" src="#skull-model" position="0 2 2"></a-gltf-model>
 </a-scene>
