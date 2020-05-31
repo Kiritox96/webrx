@@ -1,5 +1,7 @@
-<a-scene embedded arjs>
-
-  <!-- Defining the URL inline. Not recommended but more comfortable for web developers. -->
-  <a-gltf-model position="0 0 -3" rotation="0 100 0" src="https://github.com/KhronosGroup/glTF-Sample-Models/blob/master/2.0/Duck/glTF-Draco/Duck.gltf"></a-gltf-model>
+<a-scene embedded arjs='trackingMethod: best;'>
+  <a-anchor hit-testing-enabled='true'>
+  <a-gltf-model src="https://andrescuervo.github.io/assets/ghostie/ghostie.gltf" scale="0.10 0.10 0.10"></a-gltf-model>
+        <a-box position='0 0.5 0' material='opacity: 0.5;'></a-box>
+  </a-anchor>
+    <a-camera-static/>
 </a-scene>
