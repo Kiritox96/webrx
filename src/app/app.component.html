@@ -1,5 +1,7 @@
 <a-scene embedded arjs>
-  
-  <a-entity gltf-model="url(https://andrescuervo.github.io/assets/ghostie/ghostie.gltf)"></a-entity>
+  <a-assets>
+    <a-asset-item id="tree" src="https://andrescuervo.github.io/assets/ghostie/ghostie.gltf"></a-asset-item>
+  </a-assets>
+  <a-entity position="0.5 0.5 3" gltf-model="#tree"></a-entity>
     
 </a-scene>
