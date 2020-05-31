@@ -1,10 +1,11 @@
 
 <a-scene embedded>
+  <a-assets (loaded)="loaded($event)">
+    <a-asset-item id="tree" src="../assets/models/dragon.glb"></a-asset-item>
+  </a-assets>
   <a-marker-camera preset='hiro'>
-    <a-assets>
-      <a-asset-item id="tree" src="../assets/models/dragon.glb"></a-asset-item>
-    </a-assets>
+    
     <!-- use your gltf model -->
-    <a-entity position='0 0.5 0' gltf-model="#tree"></a-entity>
+    <a-entity *ngIf="isLoaded" position='0 0.5 0' gltf-model="#tree"></a-entity>
   </a-marker-camera>
 </a-scene>

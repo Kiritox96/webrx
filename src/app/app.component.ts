@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'webxr';
+  isLoaded = false;
+
+  loaded($event) {
+    this.isLoaded = true;
+  }
 }
