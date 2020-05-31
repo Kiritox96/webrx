@@ -1,10 +1,10 @@
 
-<a-scene embedded arjs='sourceType: webcam;'>
-  <a-marker preset='hiro'>
-
-    <a-entity scale="0.2 0.2 0.2" gltf-model="url(https://cdn.rawgit.com/KhronosGroup/glTF-Sample-Models/9176d098/1.0/Duck/glTF/Duck.gltf)"></a-entity>
-
-  </a-marker>
-
-  <a-entity camera></a-entity>
+<a-scene embedded>
+  <a-marker-camera preset='hiro'>
+    <a-assets>
+      <a-asset-item id="tree" src="../assets/models/dragon.glb"></a-asset-item>
+    </a-assets>
+    <!-- use your gltf model -->
+    <a-entity position='0 0.5 0' gltf-model="#tree"></a-entity>
+  </a-marker-camera>
 </a-scene>
