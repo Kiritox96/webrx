@@ -1,8 +1,37 @@
 
+<!-- Inside body -->
 <a-scene>
-  <a-assets >
-    <a-asset-item id="tree" src="../assets/models/dragon.glb"></a-asset-item>
-  </a-assets>
-
-  <a-entity scale="0.2 0.2 0.2" position="0.5 0.5 0.5" gltf-model="#tree"></a-entity>
+<a-assets>
+    <a-mixin id="user" visible="false" look-controls wasd-controls share="position, rotation"></a-mixin>
+</a-assets>
+<a-entity sharedspace="hold: true" avatars="onmyself: user">
+    <!-- Actually, this is not needed but convenient to have some reference points -->
+    <a-entity environment="preset: forest"><a-entity>
+</a-entity>
 </a-scene>
+<template>
+<a-sphere radius="0.1" color=”#ff0000”></a-sphere>
+</template>
+<script>
+var scene = document.querySelector('a-scene');
+    
+(function start() {
+    if (!scene.hasLoaded) {
+    scene.addEventListener('loaded', start);
+    return;
+    }
+        
+    // Now it’s safe to change the scene components...
+}());
+var prefix = window.location.host.split('.')[0] + '-';
+var prefix = window.location.host.split('.')[0] + '-';
+var currentUrl = new URL(window.location);
+var roomName = currentUrl.search.substr(1);if (!roomName) {
+roomName = prefix + Date.now();
+currentUrl.search = roomName;
+history.pushState({}, '', currentUrl.href);
+}
+        
+var room = document.querySelector('[sharedspace]');
+room.setAttribute('sharedspace', { room: roomName, hold: false });
+    </script>
